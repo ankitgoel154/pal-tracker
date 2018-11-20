@@ -5,8 +5,11 @@ notifications:
 env:
   - RELEASE_TAG="release-$TRAVIS_BUILD_NUMBER"
 
+<<<<<<< HEAD
 if: tag IS blank
 
+=======
+>>>>>>> d921f90... Add task for migrating databases
 jobs:
   include:
     - stage: build and publish
