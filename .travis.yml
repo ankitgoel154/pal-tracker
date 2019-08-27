@@ -7,7 +7,6 @@ env:
 
 if: tag IS blank
 
-
 jobs:
   include:
     - stage: build and publish
