@@ -4,13 +4,7 @@ notifications:
   email: false
 env:
   - RELEASE_TAG="release-$TRAVIS_BUILD_NUMBER"
-  - CF_API_URL="api.sys.evans.pal.pivotal.io"
-  - CF_ORG="ankit.goel.rbs.co.uk"
-  - CF_SPACE="sandbox"
-  - CF_USERNAME="ankit.goel.rbs.co.uk"
-  - CF_PASSWORD="8n6s8syw"
-  - GITHUB_USERNAME="anandmishra15"
-  - GITHUB_OAUTH_TOKEN="910c665d466beb27250b70ba3eeabd6c12e6a9a0"
+
 if: tag IS blank
 
 
@@ -19,7 +13,6 @@ jobs:
     - stage: build and publish
       language: java
       jdk: openjdk11
-      before_install: gem install bundler
       install: skip
       script: ./gradlew clean build
       before_deploy:
