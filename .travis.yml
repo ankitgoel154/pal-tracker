@@ -19,6 +19,7 @@ jobs:
     - stage: build and publish
       language: java
       jdk: openjdk11
+      before_install: gem install bundler
       install: skip
       script: ./gradlew clean build
       before_deploy:
