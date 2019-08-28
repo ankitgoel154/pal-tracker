@@ -1,14 +1,10 @@
 package io.pivotal.pal.tracker;
 
-import io.pivotal.pal.tracker.TimeEntry;
-import org.springframework.stereotype.Repository;
-
-import java.util.Collection;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Repository
 public class InMemoryTimeEntryRepository implements TimeEntryRepository{
 
     private Map<Long,TimeEntry> idTimeEntryMap = new HashMap<>();
@@ -22,8 +18,8 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
         return timeEntry;
     }
 
-    public Collection<TimeEntry> list() {
-        return idTimeEntryMap.values();
+    public List<TimeEntry> list() {
+        return new ArrayList<>(idTimeEntryMap.values());
     }
 
     public TimeEntry find(long id) {

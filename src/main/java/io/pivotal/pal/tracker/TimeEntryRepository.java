@@ -8,7 +8,7 @@ public interface TimeEntryRepository {
 
     TimeEntry find(long timeEntryId);
 
-    Collection<TimeEntry> list();
+    List<TimeEntry> list();
 
     TimeEntry update(long eq, TimeEntry any);
 
